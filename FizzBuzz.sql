@@ -11,3 +11,5 @@
 SELECT MAX(s)
 FROM Cte
 GROUP BY i
+select 1
+GO
