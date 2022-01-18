@@ -1,14 +1,14 @@
-;WITH Numbers(i) AS 
-(               SELECT   1 
-    UNION ALL   SELECT i+1                      FROM Numbers WHERE i < 100
+with NUMBERS(I) as 
+(               select   1 
+    union all   select I+1                      from NUMBERS where I < 100
 )
-, Cte(i, s) AS 
-(               SELECT i, 'FizzBuzz'            FROM Numbers WHERE i % 15 = 0
-    UNION ALL   SELECT i, 'Fizz'                FROM Numbers WHERE i %  3 = 0
-    UNION ALL   SELECT i, 'Buzz'                FROM Numbers WHERE i %  5 = 0
-    UNION ALL   SELECT i, CAST(i AS VARCHAR(8)) FROM Numbers 
+, CTE(I, S) as 
+(               select I, 'FizzBuzz'            from NUMBERS where I % 15 = 0
+    union all   select I, 'Fizz'                from NUMBERS where I %  3 = 0
+    union all   select I, 'Buzz'                from NUMBERS where I %  5 = 0
+    union all   select I, cast(I AS varchar(8)) from NUMBERS 
 )
-SELECT MAX(s)
-FROM Cte
-GROUP BY i
-GO
+select max(S)
+from CTE
+group by I
+;
