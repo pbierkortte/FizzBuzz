@@ -16,4 +16,3 @@ buzz = 0,0,0,0,1
 for idx in range(100):
     fizz, buzz = fizz[1:] + fizz[:1], buzz[1:] + buzz[:1]
     print("Fizz" * fizz[-1] + "Buzz" * buzz[-1] or idx + 1)
-    
